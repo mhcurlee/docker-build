@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN echo "nameserver 8.8.8.8" >> /etc/resolve.conf
+RUN host google.com
 
 RUN yum -y install httpd
 
