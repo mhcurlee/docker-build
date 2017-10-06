@@ -1,5 +1,7 @@
 FROM centos:7
 
+RUN cat /etc/resolv.conf
+
 RUN host google.com
 
 RUN yum -y install httpd
