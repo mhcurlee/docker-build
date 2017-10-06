@@ -1,7 +1,7 @@
 FROM centos:7
 
 RUN echo "ip_resolve=4" >> /etc/yum.conf 
-RUN cat  /etc/yum.conf 
+RUN ping -c 4 mirrorlist.centos.org 
 
 RUN yum -y install httpd
 
