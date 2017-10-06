@@ -1,8 +1,5 @@
 FROM centos:7
 
-RUN echo "ip_resolve=4" >> /etc/yum.conf 
-RUN ping -c 4 mirrorlist.centos.org 
-
 RUN yum -y install httpd
 
 RUN sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf
