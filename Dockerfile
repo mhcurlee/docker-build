@@ -4,7 +4,7 @@ RUN yum -y install httpd
 
 RUN sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf
 
-RUN chgrp -R 0 /var/log/httpd ; chgrp -R 0 /var/run/httpd
+RUN chgrp -R 0 /var/log/httpd ; chgrp -R 0 /var/run/httpd; chgrp 0 /usr/sbin/httpd
 RUN chmod -R g=u var/log/httpd 
 RUN chmod -R g=u /run/httpd/* 
 
@@ -16,7 +16,6 @@ VOLUME /var/www/html
 
 EXPOSE 8080
 
-USER apache
 
 
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
