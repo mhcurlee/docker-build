@@ -4,6 +4,8 @@ RUN yum -y install httpd && yum clean all -y
 
 RUN sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf
 
+RUN chmod -R g+w /run/httpd/
+
 
 RUN echo "TEST ME v3" > /var/www/html/index.html
 
