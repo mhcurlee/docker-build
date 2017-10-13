@@ -1,12 +1,9 @@
 FROM centos:7
 
-RUN yum -y install httpd
+RUN yum -y install httpd && yum clean all -y
 
 RUN sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf
 
-RUN chgrp -R 0 /var/log/httpd ; chgrp -R 0 /var/run/httpd; chgrp 0 /usr/sbin/httpd
-RUN chmod -R g=u var/log/httpd 
-RUN chmod -R g=u /run/httpd/* 
 
 RUN echo "TEST ME v3" > /var/www/html/index.html
 
