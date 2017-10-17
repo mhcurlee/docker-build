@@ -7,7 +7,7 @@ sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf && \
 chgrp -R 0 /run/httpd && \
 chmod -R g=rwX /run/httpd && \
 chgrp -R 0 /var/log/httpd && \
-chmod -R g=rwX /var/log/httpd && \
+chmod -R g=rwX /var/log/httpd 
 
 
 #add custom start script
