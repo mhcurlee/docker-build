@@ -2,9 +2,9 @@ FROM centos:7
 
 
 #install apache
-RUN yum -y install httpd && yum clean all -y \
-sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf \
-chmod -R g=u /run/httpd  \
+RUN yum -y install httpd && yum clean all -y && \
+sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf && \
+chmod -R g=u /run/httpd && \
 chmod -R g=u /var/log/httpd 
 
 
