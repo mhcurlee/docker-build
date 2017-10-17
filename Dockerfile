@@ -1,6 +1,11 @@
 FROM centos:7
 
 
+
+#add custom start script
+COPY start_apache.sh /usr/bin/start_apache.sh
+
+
 #install apache
 RUN yum -y install httpd && yum clean all -y && \
 sed -i -e 's/^Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf && \
@@ -8,13 +13,8 @@ chgrp -R 0 /run/httpd && \
 chmod -R g=rwX /run/httpd && \
 chgrp -R 0 /var/log/httpd && \
 chmod -R g=rwX /var/log/httpd  && \
-echo "TEST ME v5" > /var/www/html/index.html
-
-
-#add custom start script
-COPY start_apache.sh /usr/bin/start_apache.sh
-RUN chmod +x  /usr/bin/start_apache.sh
-
+echo "TEST ME v5" > /var/www/html/index.html && \
+chmod +x  /usr/bin/start_apache.sh
 
 
 ENV MYVAR=marvin
