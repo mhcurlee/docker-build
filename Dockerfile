@@ -14,7 +14,6 @@ chmod -R g=rwX /run/httpd && \
 chgrp -R 0 /var/log/httpd && \
 chmod -R g=rwX /var/log/httpd  && \
 echo "TEST ME v6" > /var/www/html/index.html && \
-echo "<br><br><center><img src=ose.png></center>" > /var/www/html/index.html && \
 chmod +x  /usr/bin/start_apache.sh
 
 #add png file 
