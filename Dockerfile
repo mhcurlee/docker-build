@@ -1,6 +1,8 @@
 FROM centos:7
 
 
+#add custom start script
+COPY start_apache.sh /usr/bin/start_apache.sh
 
 
 
@@ -16,8 +18,6 @@ chmod +x  /usr/bin/start_apache.sh
 
 #add png file 
 COPY ose.png /var/www/html/ose.png
-#add custom start script
-COPY start_apache.sh /usr/bin/start_apache.sh
 
 ENV MYVAR=marvin
 
