@@ -2,6 +2,8 @@ FROM jsmigel/centos-epel
 #FROM centos:7
 
 
+#add custom start script
+COPY start_apache.sh /usr/bin/start_apache.sh
 
 #install apache
 RUN yum -y install httpd stress && yum clean all -y && \
